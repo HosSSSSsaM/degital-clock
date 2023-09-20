@@ -1,0 +1,238 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    background-color:var(---change-color);
+    transition: 0.5s;
+    
+}
+.toggle{
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    position: relative;
+    left: -250px;
+    transition: 1s;
+    padding: 5px;
+
+}
+.btn{
+    position: absolute;
+    right: -30px;
+    font-size: 20px;
+    top: 60px;
+    background-color: white;
+    padding: 8px;
+    border-radius: 0 12px 12px 0;
+    cursor: pointer;
+}
+.open {
+    left: 0;
+}
+
+
+
+.toggle .box h4{
+    margin-left: 20px;
+    font-size: 18px;
+    opacity:0.6;
+    
+}
+.toggle .box ul{
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+.toggle .box ul li {
+    width: 50px;
+    height: 45px;
+    border-radius:50% ;
+    background-color: gray;
+    text-align: center;
+    opacity: 0.5;
+    cursor: pointer;
+    border:2px solid white;
+    outline: 1px solid black;
+}
+.toggle .box ul .active{
+    opacity: 1;
+}
+.toggle .box ul li:nth-child(1){
+    background-color: white;
+} 
+.toggle .box ul li:nth-child(2){
+    background-color: black;
+} 
+.toggle .box ul li:nth-child(3){
+    background-color:  rgb(216, 75, 75);
+} 
+.toggle .box ul li:nth-child(4){
+    background-color: rgb(227, 125, 8);
+} 
+.toggle .box ul li:nth-child(5){
+    background-color:rgb(230, 230, 65) ;
+} 
+.toggle .box ul li:nth-child(6){
+    background-color: rgba(96, 198, 98, 0.941);
+} 
+.toggle .box ul li:nth-child(7){
+    background-color: rgb(188, 63, 188);
+    
+} 
+.toggle .box ul li:nth-child(8){
+    background-color: rgb(154, 20, 20);
+    
+} 
+
+:root{
+    ---change-color:white;
+    ---secondry-color:white
+    ---number-color:black;
+    ---akarb-color:black;
+}
+.white{
+    ---change-color:white;
+    ---secondry-color:white;
+    ---number-color:black;
+    ---akarb-color:black;
+}
+.black{
+    ---change-color: black;
+    ---secondry-color:rgb(62, 57, 57);
+    ---number-color:gold;
+    ---akarb-color:white;
+}
+.red{
+    ---change-color: rgb(197, 82, 82);
+    ---secondry-color:rgb(220, 62, 62);
+    ---number-color:black;
+    ---akarb-color:black;
+}
+.orange{
+    ---change-color: rgb(227, 125, 8);
+    ---secondry-color:rgb(247, 136, 9);
+    ---number-color:rgb(95, 93, 93);
+    ---akarb-color:rgb(96, 95, 95);
+}
+.yellow{
+    ---change-color: rgb(230, 230, 65);
+    ---secondry-color:rgb(243, 243, 24);
+    ---number-color:black;
+    ---akarb-color:black;
+}
+.green{
+    ---change-color: rgba(109, 202, 111, 0.941);
+    ---secondry-color:rgb(11, 199, 14);
+    ---number-color:black;
+    ---akarb-color:black;
+}
+.purple{
+    ---change-color: rgb(195, 98, 195);
+    ---secondry-color:rgb(196, 15, 196);
+    ---number-color:rgb(218, 211, 11);
+    ---akarb-color:black;
+}
+.brown{
+    ---change-color: rgb(134, 72, 72);
+    ---secondry-color:rgb(114, 50, 50);
+    ---number-color:white;
+    ---akarb-color:white;
+}
+
+.active{
+opacity: 1;
+}
+.countaner{
+    height: 100vh;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.clock{
+    border-radius: 50%;
+    height: 600px;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: var(---secondry-color);
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    transition: 1s;
+}
+.clock .number{
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+    transform: rotate(calc(30deg * var(--n)));
+    inset: 30px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    color: var(---number-color);
+    transition: 0.5s;
+}
+.clock div b {
+    display: inline-block;
+    transform: rotate(calc( -30deg * var(--n)));
+
+}
+.clock .center{
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgb(255, 3, 3);
+    outline: 1px solid rgb(234, 0, 0);
+    transform: rotate();
+    z-index: 4;
+
+}
+.hour, .mints, .second{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: bottom;
+    bottom: 50%;
+}
+.clock .hour{
+    width: 9px;
+    height: 130px;
+    background-color:var(---akarb-color);
+    border-radius: 10px;
+
+}
+.clock .mints{
+    width: 5px;
+    height: 170px;
+    background-color: var(---akarb-color);
+    border-radius: 10px;
+}
+.clock .second{
+    width: 3px;
+    height: 200px;
+    background-color: rgb(182, 17, 17);
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
